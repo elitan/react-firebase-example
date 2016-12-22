@@ -16,7 +16,6 @@ class LandingPage extends React.Component {
 		this.firebase_refs = [];
 	}
 
-
 	componentDidMount() {
 		const count_ref = db_ref.child('count');
 		this.firebase_refs.push(count_ref);
@@ -37,12 +36,24 @@ class LandingPage extends React.Component {
 	}
 
 	handleAdditionButtonClick() {
+		this.setState({
+			count: {
+				value: null,
+				loading: true,
+			},
+		});
 		let updates = {};
 		updates['count'] = this.state.count.value + 1;
 		db_ref.update(updates);
 	}
 
 	handleSubtractionButtonClick() {
+		this.setState({
+			count: {
+				value: null,
+				loading: true,
+			},
+		});
 		let updates = {};
 		updates['count'] = this.state.count.value - 1;
 		db_ref.update(updates);
