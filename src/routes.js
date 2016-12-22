@@ -10,16 +10,16 @@ import AppBase from  './components/app/AppBase';
 import Dashboard from './components/app/Dashboard';
 
 export default (
-    <Route path="/" component={App}>
-        <IndexRoute component={LandingPage} />
+	<Route path="/" component={App}>
+		<IndexRoute component={LandingPage} />
 
-        // auth
-        <Route path="login" component={Login} />
-        <Route path="logout" component={Logout} />
+		// auth
+		<Route path="login" component={Login} />
+		<Route path="logout" component={Logout} />
 
-        // app (logged in)
-        <Route path="app" component={AppBase}>
-            <IndexRoute component={Dashboard} />
-        </Route>
-    </Route>
+		// app (logged in)
+		<Route path="app" component={AppBase}>
+			<IndexRoute component={Dashboard} />
+		</Route>
+	</Route>
 );
